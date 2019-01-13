@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1547370601 source:e:\offer\offer32\main.cpp
+	<iostream>
+	<cstdio>
+	<cstdlib>
+	<stack>
+	<queue>
+

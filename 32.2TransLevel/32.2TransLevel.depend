@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1547375136 source:e:\offer\32.2translevel\main.cpp
+	<cstdio>
+	<iostream>
+	<cstdlib>
+	<queue>
+
