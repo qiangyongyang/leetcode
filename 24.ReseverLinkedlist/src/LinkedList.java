@@ -1,7 +1,7 @@
 /*
- * 1.确定有无环，一个走一步，一个走两步，看会不会相遇；
- * 2.确定环中结点n，从相遇出发计数，再次相遇步数为n
- * 3.一个先走n步，然后两个一起走，相遇出即为入口点
+ * 1.纭畾鏈夋棤鐜紝涓�涓蛋涓�姝ワ紝涓�涓蛋涓ゆ锛岀湅浼氫笉浼氱浉閬囷紱
+ * 2.纭畾鐜腑缁撶偣n锛屼粠鐩搁亣鍑哄彂璁℃暟锛屽啀娆＄浉閬囨鏁颁负n
+ * 3.涓�涓厛璧皀姝ワ紝鐒跺悗涓や釜涓�璧疯蛋锛岀浉閬囧嚭鍗充负鍏ュ彛鐐�
  */
 public class LinkedList {
 	Node head = null;
@@ -22,7 +22,7 @@ public class LinkedList {
 		Node temp = head;
     	int i = 1;
     	while(temp != null){
-    		System.out.println("第"+i+"个结点的数值域的值为："+temp.data);
+    		System.out.println("绗�"+i+"涓粨鐐圭殑鏁板�煎煙鐨勫�间负锛�"+temp.data);
     		i++;
     		temp = temp.next;
     	}
@@ -54,10 +54,12 @@ public class LinkedList {
 			p = q;
 		}
 		
+		
+		
 		Node temp = head;
     	int i = 1;
     	while(temp != null){
-    		System.out.println("第"+i+"个结点的数值域的值为："+temp.data);
+    		System.out.println("绗�"+i+"涓粨鐐圭殑鏁板�煎煙鐨勫�间负锛�"+temp.data);
     		i++;
     		temp = temp.next;
     	}
@@ -86,9 +88,9 @@ public class LinkedList {
 		ls.add(node8);
 		ls.add(node9);
 		
-		System.out.println("插入后：");
+		System.out.println("鎻掑叆鍚庯細");
 		ls.print();
-		System.out.println("反转后：");
+		System.out.println("鍙嶈浆鍚庯細");
 		ls.reverseList();
 		
 	}
