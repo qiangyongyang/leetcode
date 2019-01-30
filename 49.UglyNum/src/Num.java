@@ -1,12 +1,6 @@
 import java.util.Scanner;
 
 public class Num {
-
-	public static int min(int a, int b, int c) {
-		int ans = Math.min(a, b);
-		return Math.min(ans, c);
-	}
-
 	public static int UglyNum(int n) {
 		 if (n <= 0) {
 	            return 0;
