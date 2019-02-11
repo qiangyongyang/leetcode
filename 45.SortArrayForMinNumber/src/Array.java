@@ -6,15 +6,14 @@ public class Array {
 		if (data == null) {
 			return null;
 		}
+		
 		String str = new String();
-		String pre, last;
-		for (int i = 0; i < data.length; i++) {
-			for (int j = i + 1; j < data.length; j++) {
-				
-				pre = data[i] + "" + data[j];
-				last = data[j] + "" + data[i];
-				
-				if (pre.compareTo(last) > 0) {
+		String pre,last;
+		for(int i=0;i<data.length;i++){
+			for(int j=i+1;j<data.length;j++){
+				pre = data[i] +"" + data[j];
+				last = data[j]+ "" + data[i];
+				if(pre.compareTo(last)>0){
 					int temp = data[i];
 					data[i] = data[j];
 					data[j] = temp;
@@ -23,7 +22,6 @@ public class Array {
 			str += data[i];
 		}
 		return str;
-
 	}
 
 	public static void main(String[] args) {
