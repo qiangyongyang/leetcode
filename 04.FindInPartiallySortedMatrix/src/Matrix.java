@@ -6,40 +6,40 @@ public class Matrix {
 		if (arr == null) {
 			return -1;
 		}
-		int i = 0; // ĞĞµÄ³¤¶È
-		int j = arr[arr.length - 1].length-1; // ÁĞµÄ³¤¶È
-
-		while (i <arr.length && j >= 0) {
+		
+		if(arr == null || arr.length == 0){
+			return -1;
+		}
+		int i = 0;
+		int j = arr[0].length-1;
+		
+		while(i < arr.length && j>= 0){
 			if(num == arr[i][j]){
-				System.out.println("Î»ÖÃÔÚ£º"+i+"  "+j);
+				System.out.println("ä½ç½®æ˜¯ï¼š"+i+"è¡Œ"+j+"åˆ—");
 				return num;
-			}else if(num<arr[i][j]){
-				j--;
-			}else{
+			}else if(num > arr[i][j]){
 				i++;
+			}else{
+				j--;
 			}
 		}
-
 		return -1;
 	}
 
 	public static void main(String[] args) {
 		int arr[][] = { { 1, 2, 8, 9 }, { 2, 4, 9, 12 }, { 4, 7, 10, 13 }, { 6, 8, 11, 15 } };
 		/*
-		 * 1 2 8 9 
-		 * 2 4 9 12
-		 * 4 7 10 13
-		 * 6 8 11 15
+		 * 1 2 8 9 2 4 9 12 4 7 10 13 6 8 11 15
 		 */
 		Scanner cin = new Scanner(System.in);
-		while(true){
-			System.out.print("ÊäÈëÒª²éÕÒµÄÊı£º");
+		while (true) {
+			System.out.print("è¾“å…¥è¦æŸ¥æ‰¾çš„å€¼ï¼š");
 			int num = cin.nextInt();
 			int index = Finddata(arr, num);
-			if(index == -1){
+			if (index == -1) {
 				System.out.println("not exist");
 			}
 		}
-		
+
 	}
 }

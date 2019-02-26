@@ -1,23 +1,33 @@
 public class replace {
 
 	public static void Replace(char[] c, int len1, int len2) {
-		if (c.length == 0) {
+		/*
+		 * if (c.length == 0) { return; } int newlen = len2 - 1;
+		 * 
+		 * for (int i = len1 - 1; i >= 0; i--) { if (c[i] == ' ') { c[newlen--]
+		 * = '0'; c[newlen--] = '2'; c[newlen--] = '%'; } else { c[newlen--] =
+		 * c[i]; } }
+		 * 
+		 * for (int i = 0; i < len2; i++) { System.out.print(c[i]); }
+		 */
+		if (c.length == 0 || c == null) {
 			return;
-		}
-		int newlen = len2 - 1;
-		
-		for (int i = len1 - 1; i >= 0; i--) {
-			if (c[i] == ' ') {
-				c[newlen--] = '0';
-				c[newlen--] = '2';
-				c[newlen--] = '%';
-			} else {
-				c[newlen--] = c[i];
-			}
-		}
+		} else {
+			int newlen = len2 - 1;
 
-		for (int i = 0; i < len2; i++) {
-			System.out.print(c[i]);
+			for (int i = len1 - 1; i >= 0; i--) {
+				if(c[i] == ' '){
+					c[newlen--] = '0';
+					c[newlen--] = '2';
+					c[newlen--] = '%';
+				}else{
+					c[newlen--] = c[i];
+				}
+			}
+			
+			for(int i=0;i<len2;i++){
+				System.out.print(c[i]);
+			}
 		}
 
 	}

@@ -30,22 +30,21 @@ public class BinTree {
 	public Node initTree(int[] Pre, int start1, int end1, int[] In, int start2, int end2) {
 		int rootData = Pre[start1];
 		Node root = new Node(rootData);
-		Node left,right;
+		Node left, right;
 		int index = findIndexInArray(In, rootData, start2, end2);
 
-		if (index == start2) { // 无左子树
+		if (index == start2) {
 			left = null;
 		} else {
 			left = initTree(Pre, start1 + 1, start1 - start2 + index, In, start2, index - 1);
 		}
 
-		if (index == end2) { // 无右子树
+		if (index == end2) {
 			right = null;
 		} else {
 			right = initTree(Pre, start1 - start2 + index + 1, end1, In, index + 1, end2);
 		}
 
-		
 		root.lchild = left;
 		root.rchild = right;
 
@@ -57,7 +56,7 @@ public class BinTree {
 		int[] Pre = { 1, 2, 4, 8, 9, 5, 10, 3, 6, 7 };
 		int[] In = { 8, 4, 9, 2, 10, 5, 1, 6, 3, 7 };
 		Node root = bt.initTree(Pre, 0, 9, In, 0, 9);
-		System.out.println("二叉树后续遍历：");
+		System.out.println("二叉树后续遍历："); // 8 9 4 10 5 2 6 7 3 1
 		bt.PostOrder(root);
 	}
 

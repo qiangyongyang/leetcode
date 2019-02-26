@@ -1,21 +1,20 @@
 package Lazy_pattern;
 
 public class MyObject {
-	private volatile static MyObject myObject;
-
-	private MyObject() {
-		// TODO Auto-generated constructor stub
-	}
-
-	public static MyObject getInstance() {
+	private static volatile MyObject myObjet = null;
+	
+	private MyObject(){
 		
-		if(myObject == null){
+	}
+	
+	public static MyObject getInstance(){
+		if(myObjet == null){
 			synchronized (MyObject.class) {
-				if(myObject == null){
-					myObject = new MyObject();
+				if(myObjet == null){
+					myObjet = new MyObject();
 				}
 			}
 		}
-		return myObject;
+		return myObjet;
 	}
 }

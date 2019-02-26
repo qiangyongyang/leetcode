@@ -6,16 +6,16 @@ public class Linkedlist{
 	Node head = null;
 	
 	public void add(Node addNode){
+		
 		if(head == null){
 			head = addNode;
-			return ;
+		}else{
+			Node temp = head;
+			while(temp.next != null){
+				temp = temp.next;
+			}
+			temp.next = addNode;
 		}
-		
-		Node temp = head;
-		while(temp.next!= null){
-			temp = temp.next;
-		}
-		temp.next = addNode;
 	}
 	
 	public void printReverse(Node listNode){

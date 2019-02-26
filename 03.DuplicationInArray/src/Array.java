@@ -19,7 +19,7 @@ public class Array {
 	}
 
 	public static void main(String[] args) {
-		int data[] = { 2, 3, 1, 0, 9, 8, 9 };
+		int data[] = { 2, 3, 3, 0, 9, 8, 9 };
 		Doplication(data);
 	}
 }
