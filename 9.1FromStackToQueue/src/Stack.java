@@ -42,14 +42,17 @@ public class Stack <E>{
 		}
 		
 		
-		for(int i = 0;i < n-1 ; i++){
+		
+		for(int i = 0;i<n-1;i++){
 			int num = s1.numTop();
 			s2.push(num);
 			s1.pop();
 		}
-		System.out.println(s1.numTop());
+		
+		System.out.print(s1.numTop()+" ");
+		
 		while(!s2.isEmpty()){
-			System.out.println(s2.numTop());
+			System.out.print(s2.numTop()+" ");
 			s2.pop();
 		}
 		
