@@ -1,5 +1,7 @@
 import java.util.Scanner;
-
+/*
+ * è‹¥æ˜¯é’è›™ä¸€æ¬¡å¯ä»¥è·³1,2,3,....né˜¶ï¼Œåˆ™f(n) = z^(n-1).
+ */
 public class Frog {
 	public static long Fibonacci(int n){
 		if(n<=0){
@@ -17,10 +19,10 @@ public class Frog {
 	public static void main(String[] args) {
 		Scanner cin =new Scanner(System.in);
 		while(true){
-			System.out.print("ÇëÊäÈëÌ¨½×²ãÊı£º");
+			System.out.print("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì¨ï¿½×²ï¿½ï¿½ï¿½ï¿½ï¿½");
 			int n = cin.nextInt();
 			long num =Fibonacci(n);
-			System.out.println(n+"²ãÌ¨½×¹²ÓĞ"+num+"ÖÖÌø·¨");
+			System.out.println(n+"ï¿½ï¿½Ì¨ï¿½×¹ï¿½ï¿½ï¿½"+num+"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
 		}
 		
 	}

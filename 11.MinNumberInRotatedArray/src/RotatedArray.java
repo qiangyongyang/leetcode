@@ -1,3 +1,10 @@
+/*
+ * 三种情况：
+ *1 2 3 4 5 
+ *2 2 1 2 2
+ *3 4 5 1 2
+ * 
+ */
 public class RotatedArray {
  
   public static int getTheMin(int data[]) {
@@ -11,7 +18,7 @@ public class RotatedArray {
     int result = data[0];
     
     int left = 0, right = data.length - 1;
-    int mid = left;
+    
     
     // 确保 left 下标对应的值在左边的递增子数组，right 对应的值在右边递增子数组
     while (data[left] >= data[right]) {
@@ -20,9 +27,10 @@ public class RotatedArray {
         return data[right];
       }
       // 取中间位置
-      mid = (left + right) / 2;
-      // 三值相等的特殊情况，则需要从头到尾查找最小的值
-      if (data[mid] == data[left] && data[mid] == data[right]) {
+      int mid = (left + right) / 2;
+      
+      // 三值相等的特殊情况，则需要从头到尾查找最小的值      2 2 2 1 2
+      if (data[mid] == data[left] && data[left] == data[right]) {
         return midInorder(data, left, right);
       }
       // 代表中间元素在左边递增子数组
@@ -36,14 +44,14 @@ public class RotatedArray {
   }
  
   public static int midInorder(int[] data, int start, int end) {
-    int result = data[start];
-    for (int i = start ; i <= end; i++) {
-      if (result > data[i])
-        result = data[i];
-    }
-    return result;
+	    int result = data[start];
+	    for (int i = start ; i <= end; i++) {
+	      if (result > data[i])
+	        result = data[i];
+	    }
+	    return result;
   }
- 
+  
   public static void main(String[] args) {
    
     int[] array1 = {3, 4, 5, 1, 2};
@@ -78,4 +86,6 @@ public class RotatedArray {
     System.out.println(getTheMin(array8));
  
   }
+
+
 }

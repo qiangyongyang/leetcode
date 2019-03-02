@@ -1,23 +1,22 @@
 import java.util.Scanner;
 
 /*
- * µ±n>=5Ê±£¬¾¡¿ÉÄÜ¶à²Ã¼ô³¤¶ÈÎª3µÄÉş×Ó£»
- * µ±Ê£ÏÂµÄ³¤¶ÈµÈÓÚ4Ê±£¬°ÑÉş×Ó¼ô³É³¤¶ÈÎª2µÄÁ½ÌõÉş×Ó
+ * å½“n>=5æ—¶ï¼Œå¤šå‡é•¿åº¦ä¸º3çš„ç»³å­ï¼Œå½“å‰©ä¸‹é•¿åº¦ä¸º4ï¼Œåˆ™å‰ªæˆ2*2ï¼›
  */
 public class Rope {
 
 	public static int Multi(int n) {
-		if (n <= 2)
+		/*if (n <= 2)
 			return -1;
 		if (n == 3)
 			return 2;
 		if (n == 4)
 			return 4;
 		int ans = 1;
-		int other = n % 3;   //otherÎª0£¬1£¬2
+		int other = n % 3;   //otherÎª0ï¿½ï¿½1ï¿½ï¿½2
 		int cnt  = n/3;
 		
-		//µ±Ê£ÏÂµÄ³¤¶ÈµÈÓÚ4Ê±£¬°ÑÉş×Ó¼ô³É³¤¶ÈÎª2µÄÁ½ÌõÉş×Ó(Ö±½Ó·µ»Ø4)
+		
 		if (other + 3 == 4) {
 			for (int i = 0; i < cnt - 1; i++) {
 				ans = ans*3;
@@ -30,19 +29,44 @@ public class Rope {
 			if(other>0){
 				ans = ans * other;
 			}
+		}*/
+		if(n < 2){
+			return -1;
+		}
+		if(n == 3){
+			return 2;
+		}
+		if(n == 4){
+			return 4;
+		}
+		
+		int other  = n % 3;
+		int cnt  = n/3;
+		int result = 1;
+		
+		if(other + 3 == 4){
+			for(int i = 1; i< cnt ;i++){
+				result *= 3;
+			}
+			result *= 4;
+		}else{
+			for(int i = 1; i<= cnt ;i++){
+				result *= 3;
+			}
+			result *= other;
 		}
 
-		return ans;
+		return result;
 	}
 
 	public static void main(String[] args) {
 		Scanner cin = new Scanner(System.in);
 		while (true) {
-			System.out.print("ÊäÈëÉş×Ó³¤¶È£º");
+			System.out.print("è¾“å…¥ç»³å­é•¿åº¦ï¼š");
 			int n = cin.nextInt();
 
 			int ans = Multi(n);
-			System.out.println("·Ö¸î×î´óÖµÊÇ£º" + ans);
+			System.out.println("æœ€å¤§ä¹˜ç§¯ä¸ºï¼š" + ans);
 		}
 	}
 }
