@@ -1,8 +1,7 @@
 import java.util.Scanner;
 /*
- * Ò»¸öÊınumÈç¹ûÎª2µÄn´Î·½£¬ÄÇÃ´ËüÖ»ÓĞÒ»¸ö1£¬ÆäËûÎ»È«ÊÇ0£»
- * Ôònum-1Ö»ÓĞÒ»¸ö0£¬ÆäËûµÄ¶¼ÊÇ1£»
- * ËùÒÔ£¬Èç¹ûÒ»¸öÊıÎª2µÄn´Î·½£¬ÄÇÃ´ n&(n-1)==0.
+ * æŠŠè¿™ä¸ªæ•° å‡å»1ï¼Œç„¶åä¸åŸæ•°å­—åšä¸è¿ç®—ã€‚
+ * å¦‚æœç»“æœä¸º0ï¼Œè¯´æ˜æ˜¯2çš„æ•´æ•°æ¬¡æ–¹
  */
 public class Num {
 
@@ -18,11 +17,11 @@ public class Num {
 	public static void main(String[] args) {
 		Scanner cin = new Scanner(System.in);
 		while (true) {
-			System.out.print("ÊäÈëÊı×Ö£º");
+			System.out.print("");
 			int n = cin.nextInt();
 
 			boolean ans = isPower2(n);
-			System.out.println(n + "ÊÇ²»ÊÇ2µÄ±¶Êı£¿" + ans);
+			System.out.println(n + "æ˜¯ä¸æ˜¯2çš„æ•´æ•°æ¬¡æ–¹ï¼Ÿ" + ans);
 		}
 	}
 }

@@ -27,6 +27,9 @@ public class Str {
 	}
 
 	public static boolean match(char[] ch, int chIndex, char[] pat, int patIndex) {
+		
+		// 如果模式中的第二个字符是'*'时：
+	
 		if (chIndex == ch.length && patIndex == pat.length) {
 			return true;
 		}
@@ -34,23 +37,25 @@ public class Str {
 		if (chIndex != ch.length && patIndex == pat.length) {
 			return false;
 		}
-
-		// 如果模式中的第二个字符是'*'时：
-		if (patIndex + 1 < pat.length && pat[patIndex + 1] == '*') {
-			if (ch[chIndex] == pat[patIndex] || pat[patIndex] == '.') {
-				return match(ch, chIndex, pat, patIndex + 2) || match(ch, chIndex + 1, pat, patIndex + 2)
-						|| match(ch, chIndex + 1, pat, patIndex); // 情况b1,b2,b3
-			} else {
-				return match(ch, chIndex, pat, patIndex + 2); // 情况c1
+		
+		
+		if(patIndex +1 < pat.length && pat[patIndex+1] == '*'){
+			if(ch[chIndex] == pat[patIndex] || pat[patIndex] == '.'){
+				return match(ch, chIndex, pat, patIndex+2) || match(ch, chIndex+1, pat, patIndex+2) || match(ch, chIndex+1, pat, patIndex);
+			}else{
+				return match(ch, chIndex, pat, patIndex+2);
 			}
 		}
-
+		
+		
 		// 第一个字符匹配，但模式第二个不是* 模式和字符串上都后移一位 情况a1
 		if (chIndex != ch.length && (ch[chIndex] == pat[patIndex] || pat[patIndex] == '.')) {
 			return match(ch, chIndex + 1, pat, patIndex + 1);
 		} else {
 			return false;// 第一个字符不匹配并且模式第二个位置不是* 情况a2
 		}
+		
+		
 	}
 
 	public static void main(String[] args) {

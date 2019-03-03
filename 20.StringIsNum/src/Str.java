@@ -9,7 +9,7 @@
 public class Str {
 
 	public static boolean isNumeric_3(char[] str) {
-		// 标记符号、 小数点、 e是否出现过
+		/*// 标记符号、 小数点、 e是否出现过
 		boolean sign = false, decimal = false, hasE = false;
 		for (int i = 0; i < str.length; i++) {
 			if (str[i] == 'e' || str[i] == 'E') {
@@ -35,11 +35,14 @@ public class Str {
 			} else if (str[i] < '0' || str[i] > '9') // 不合法字符
 				return false;
 		}
-		return true;
+		return true;*/
+		
+		
+		
 	}
 
 	public static void main(String[] args) {
-		String str = "+12.1e-.16";
+		String str = "+12.1e-16";
 		char[] ch = str.toCharArray();
 		System.out.println(isNumeric_3(ch));
 	}

@@ -2,43 +2,41 @@ import java.util.Scanner;
 
 public class Num {
 
-	public static double power(int m, int n) {
-		int ans=1;
-		
-		if(m ==0){         //µ×ÊýÎª0£¬·µ»Ø0
-			return 0;
-		}
-		if(n == 0){         //Ö¸ÊýÎª0£¬·µ»Ø1
+	public static double power2(int m, int n) {
+		if(n == 0){
 			return 1;
 		}
-		if(n >0){                   //Ö¸Êý>0,
-			for(int i= 0;i<n;i++){
-				ans  =ans*m;
-			}
-			return ans;
+		if (n == 1) {
+			return m;
 		}
-		if(n<0){                    //Ö¸Êý¡¶0£¬È¡µ¹Êý
-			for(int i=0;i<Math.abs(n);i++){
-				ans =ans *m;
-			}
-			return 1.0/ans;
+		if (n == -1) {
+			return 1.0 / m;
 		}
-		
-		
-		
+
+		if (n % 2 == 0) {
+			return power2(m, n / 2) * power2(m, n / 2);
+		}
+		if (n % 2 != 0) {
+			return m * power2(m, n / 2) * power2(m, n / 2);
+		}
+
 		return 0;
 	}
 
 	public static void main(String[] args) {
 		Scanner cin = new Scanner(System.in);
 		while (true) {
-			System.out.print("ÊäÈëµ×Êý:");
+			System.out.print("è¾“å…¥m:");
 			int m = cin.nextInt();
-			System.out.print("ÊäÈëÖ¸Êý:");
+			System.out.print("è¾“å…¥n:");
 			int n = cin.nextInt();
 
-			double ans = power(m, n);
-			System.out.println(m + "µÄ" + n + "´Î·½ÊÇ£º" + ans);
+			// double ans1 = power1(m, n);
+			double ans2 = power2(m, n);
+
+			// System.out.println(m + "çš„" + n + "æ¬¡æ–¹æ˜¯ï¼š" + ans1);
+			System.out.println(m + "çš„" + n + "æ¬¡æ–¹æ˜¯ï¼š" + ans2);
 		}
 	}
+
 }

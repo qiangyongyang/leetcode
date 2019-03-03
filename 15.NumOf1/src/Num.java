@@ -1,28 +1,30 @@
 import java.util.Scanner;
+
 /*
- * °ÑÒ»¸öÕûÊı¼õÈ¥1£¬ÔÙºÍÔ­ÕûÊı×öÓëÔËËã£¬»á°Ñ¸ÃÕûÊıµÄ×îÓÒ±ßµÄ1±ä³É0£¬
- * Ò»¸öÕûÊıÖĞ£¬ÓĞ¶àÉÙ¸ö1£¬¾ÍÖ´ĞĞ¶àÉÙ´ÎÕâÑùµÄ²Ù×÷¡£
+ * æŠŠä¸€ä¸ªæ•´æ•°å‡å»1ï¼Œå†å’ŒåŸæ•´æ•°åšâ€œä¸â€è¿ç®—ï¼Œè¯¥æ•´æ•°çš„æœ€å³è¾¹çš„1ï¼Œå°±ä¼šå˜æˆ0ï¼›
+ * æœ‰å‡ ä¸ª1ï¼Œæ‰§è¡Œå‡ æ¬¡è¿™æ ·çš„è¿ç®—ã€‚
  */
 public class Num {
 
 	public static int NumOf1(int n) {
-		int count = 0;
-		while (n > 0) {
-			count++;
-			n = (n - 1) & n;
 
+		int cnt = 0;
+		while (n > 0) {
+			cnt++;
+			n = n & (n - 1);
 		}
-		return count;
+		return cnt;
+
 	}
 
 	public static void main(String[] args) {
 		Scanner cin = new Scanner(System.in);
 		while (true) {
-			System.out.print("ÊäÈëÊı×Ö£º");
+			System.out.print("è¾“å…¥æ•°å­—nï¼š");
 			int n = cin.nextInt();
 
 			int ans = NumOf1(n);
-			System.out.println("°üº¬" + ans + "¸ö1");
+			System.out.println("æ•°å­—ä¸­åŒ…å«" + ans + "ä¸ª1");
 		}
 	}
 }
